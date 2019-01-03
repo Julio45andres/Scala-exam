@@ -7,6 +7,15 @@ object Exam extends App {
   val rows = readln("Number of rows: ").toInt
   val cols = readln("Number of columns: ").toInt
 
+  if (rows <= 2 || cols <= 2) {
+    println("The number of rows and columns should be more than 2")
+    System.exit(0)
+  }
+  else if (rows > Int.MaxValue || cols > Int.MaxValue){
+    println(s"The number of rows and columns should be less than ${Int.MaxValue}")
+    System.exit(0)
+  }
+
   val matrix = Matrix(rows, cols) {
     (_,_) => rand(10)
   }
