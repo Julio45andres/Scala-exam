@@ -17,7 +17,7 @@ object Exam extends App {
 
   val totals = total(transposed)
 
-  val eAvg = {
+  val eAvg: Double = {
     val evens = totals.zipWithIndex.filter(_._2 % 2 == 0).map(_._1.toDouble)
     val sum = evens.sum
     sum / evens.length
@@ -38,7 +38,7 @@ object Exam extends App {
   println("Solutions (starting from col 0): ")
   Printer printArray solutions
   Printer separate 1
-  println(s"Number of columns which total is more than $eAvg: ${solutions.length}")
+  println(f"Number of columns which total is more than $eAvg%.2f: ${solutions.length}")
 }
 
 // Matrix with a list of columns
